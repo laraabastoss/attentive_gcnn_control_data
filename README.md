@@ -42,14 +42,14 @@ Below are examples of the generated images, showing how the same digit appears u
 
 This dataset is specifically designed to test task-specific equivariance. For such a controlled setting, the most interpretable metric is accuracy:
 
-\[
+$$
 \text{Accuracy} = \frac{\text{Number of correct predictions}}{\text{Total number of samples}}
-\]
+$$
 
 - **Total samples**: 16 (4 digits × 4 rotations)
 - **Correct prediction**: predicted label matches the ground-truth after considering the rotation logic
 
-### 🧪 Expected Outcome
+### Expected Outcome
 
 - **AGE-CNNs** should achieve the highest accuracy as they explicitly model attention over transformation groups.
 - **Standard Group CNNs** may confuse symmetrical and asymmetrical transformations, lowering accuracy.
