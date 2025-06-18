@@ -28,7 +28,6 @@ This controlled dataset is designed to verify equivariance in this context. Spec
   - Rotated 7 or 8 → same label
 - **Image Format:** Grayscale, 128×128 px, white background
 
-
 Below are examples of the generated images, showing how the same digit appears under different rotations:
 
 | Original 6 (0°  → label 6) | Rotated 6 (180° → label 9) | 8 (all rotations → label 8) |
@@ -37,6 +36,18 @@ Below are examples of the generated images, showing how the same digit appears u
 
 > Note: These images will appear once you've run the dataset generator and are stored in the `controlled_digits/` folder.
 
+### Training Set
+To support model training, we also include a training dataset with multiple samples per label.
+
+- Each label class (6, 7, 8, 9) includes 100 randomized samples.
+Each image is generated with:
+- Random digit position jitter
+- Randomly selected rotation
+
+The label corresponds to the digit after rotation, consistent with the evaluation dataset.
+Images are saved in subfolders named by label (e.g., train_digits/6/, train_digits/9/), and filenames include the rotation and original digit.
+
+This training dataset aims to help the model learn rotation-sensitive patterns before being tested on the controlled evaluation set.
 
 ## Evaluation Method
 
@@ -66,7 +77,21 @@ Install dependencies using:
 pip install -r requirements.txt
 ```
 
-Run the generator:
+Run the train and test data generator:
 ```bash
-python generate_data.py
+python main.py
 ```
+
+## References
+
+- Yann LeCun, Léon Bottou, Yoshua Bengio, and Patrick Haffner.
+  *Gradient-Based Learning Applied to Document Recognition*. Proceedings of the IEEE, 1998.
+  [Link](http://yann.lecun.com/exdb/publis/pdf/lecun-01a.pdf)
+
+- Taco Cohen and Max Welling.
+  *Group Equivariant Convolutional Networks*. In Proceedings of the 33rd International Conference on Machine Learning (ICML), 2016.
+  [arXiv:1602.07576](https://arxiv.org/abs/1602.07576)
+
+- Alejandro Romero, Erik Bekkers, Jakub M. Tomczak, and Max Welling.
+  *Attentive Group Equivariant Convolutional Networks*. In Advances in Neural Information Processing Systems (NeurIPS), 2020.
+  [arXiv:2006.03492](https://arxiv.org/abs/2006.03492)

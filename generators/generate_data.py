@@ -43,7 +43,7 @@ def generate_dataset(digits: List[str], rotations: List[int], output_dir: str):
             label = get_label(digit, rotation)
             img = generate_digit_image(digit, rotation, font)
             save_image(img, digit, rotation, label, output_dir)
-    
+
     print(f"Dataset successfully created in: {output_dir}")
 
 if __name__ == "__main__":
