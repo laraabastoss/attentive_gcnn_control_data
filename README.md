@@ -1,4 +1,4 @@
-# 🧠 Fundamental Research in Machine and Deep Learning: Controlled Dataset
+# 🧠 DSAIT4205 Fundamental Research in Machine and Deep Learning: Controlled Dataset
 
 This repository provides a **controlled synthetic dataset** designed to evaluate whether **Attentive Group Equivariant CNNs (AGE-CNNs)**—can learn task specific equivariance and focus on transformations that matter for the task while ignoring those that do not.
 
