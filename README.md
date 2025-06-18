@@ -1,4 +1,4 @@
-# Fundamental Research in Machine and Deep Learning - Contol Dataset
+# Fundamental Research in Machine and Deep Learning : Contol Dataset
 
 ## Problem Statement
 Convolutional Neural Networks (CNNs) are widely used for image recognition tasks due to their ability to detect patterns regardless of their position in the image. This property is known as translation equivariance.
