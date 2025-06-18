@@ -32,11 +32,37 @@ This controlled dataset is designed to verify equivariance in this context. Spec
 - `6_rot180_label9.png` → Image of a 6 rotated 180°, labeled as 9
 - `8_rot90_label8.png` → Image of an 8 rotated 90°, label unchanged
 
+
+Below are examples of the generated images, showing how the same digit appears under different rotations:
+
+| Original 6 (0°) | Rotated 6 (180° → label 9) | 8 (all rotations → label 8) |
+|-----------------|-----------------------------|------------------------------|
+| ![6_0](controlled_digits/6_rot0_label6.png) | ![6_180](controlled_digits/6_rot180_label9.png) | ![8_90](controlled_digits/8_rot90_label8.png) |
+
+> Note: These images will appear once you've run the dataset generator and are stored in the `controlled_digits/` folder.
+
+
+## Evaluation Method
+
+This dataset is specifically designed to test task-specific equivariance. For such a controlled setting, the most interpretable metric is accuracy:
+
+\[
+\text{Accuracy} = \frac{\text{Number of correct predictions}}{\text{Total number of samples}}
+\]
+
+- **Total samples**: 16 (4 digits × 4 rotations)
+- **Correct prediction**: predicted label matches the ground-truth after considering the rotation logic
+
+### 🧪 Expected Outcome
+
+- **AGE-CNNs** should achieve the highest accuracy as they explicitly model attention over transformation groups.
+- **Standard Group CNNs** may confuse symmetrical and asymmetrical transformations, lowering accuracy.
+
+> Tip: Because the dataset is small, you can inspect predictions **sample by sample** to qualitatively evaluate whether the model learned which transformations matter.
+
 ---
 
-## 🛠️ How to Generate the Dataset
-
-### 🧾 Requirements
+##  How to Generate the Dataset
 
 Install dependencies using:
 
