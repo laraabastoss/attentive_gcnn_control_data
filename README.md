@@ -28,14 +28,10 @@ This controlled dataset is designed to verify equivariance in this context. Spec
   - Rotated 7 or 8 → same label
 - **Image Format:** Grayscale, 128×128 px, white background
 
-### Example
-- `6_rot180_label9.png` → Image of a 6 rotated 180°, labeled as 9
-- `8_rot90_label8.png` → Image of an 8 rotated 90°, label unchanged
-
 
 Below are examples of the generated images, showing how the same digit appears under different rotations:
 
-| Original 6 (0°) | Rotated 6 (180° → label 9) | 8 (all rotations → label 8) |
+| Original 6 (0°  → label 6) | Rotated 6 (180° → label 9) | 8 (all rotations → label 8) |
 |-----------------|-----------------------------|------------------------------|
 | ![6_0](controlled_digits/6_rot0_label6.png) | ![6_180](controlled_digits/6_rot180_label9.png) | ![8_90](controlled_digits/8_rot90_label8.png) |
 
