@@ -49,6 +49,10 @@ Images are saved in subfolders named by label (e.g., train_digits/6/, train_digi
 
 This training dataset aims to help the model learn rotation-sensitive patterns before being tested on the controlled evaluation set.
 
+### Testing Set
+
+For testing, I created a controlled set containing exactly one example per digit- rotation combination. Since there are 4 digits and 4 rotation angles, the test set consists of 16 samples. This setup ensures complete coverage of all possible label conditions in a compact form.
+
 ## Evaluation Method
 
 This dataset is specifically designed to test task-specific equivariance. For such a controlled setting, the most interpretable metric is accuracy:
